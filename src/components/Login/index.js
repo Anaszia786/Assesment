@@ -20,7 +20,7 @@ const Login = () => {
       });
       localStorage.setItem("token", response.data.token);
       navigate("/")
-      toast("Login successful!");
+      alert("Login successful!");
     } catch (error) {
       console.error("Login failed", error);
       toast("Invalid credentials");

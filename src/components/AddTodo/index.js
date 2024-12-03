@@ -16,14 +16,16 @@ const AddTodo = () => {
       userId: Math.floor(Math.random() * 100),
     };
     console.log(formData);
-    dispatch(addTasks(formData));
+    if (todo !== "") {
+      dispatch(addTasks(formData));
+    }
   };
 
   return (
     <form
       onSubmit={handleSubmit}
       action=""
-      className="flex flex-col py-10 items-center gap-4 rounded"
+      className="flex flex-col py-10 px-4 items-center gap-4 rounded"
     >
       <input
         onChange={(e) => setTodo(e.target.value)}
@@ -35,7 +37,7 @@ const AddTodo = () => {
       <textarea
         onChange={(e) => setDes(e.target.value)}
         value={des}
-        className="bg-slate-200 px-2 placeholder:px-3 rounded"
+        className="bg-slate-200 px-4 placeholder:px-3 rounded"
         placeholder="description"
         name=""
         id=""

@@ -9,7 +9,7 @@ const Navbar = () => {
     navigate("/login");
   };
   return (
-    <div className="flex justify-between px-8 list-none py-6 text-xl font-semibold bg-slate-400">
+    <div className="flex justify-between px-8 w-full list-none py-6 text-xl font-semibold bg-slate-400">
       <li>To-Do List Application</li>
       <button onClick={handleLogout} className="hover:text-white">
         Logout

@@ -7,15 +7,16 @@ import TodosCard from "../TodosCard";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-  
+  const load = useSelector((state) => state.tasks.Loading);
+
   useEffect(() => {
     dispatch(fetchTasks());
   }, []);
   return (
     <div>
       <AddTodo />
-      <div className="grid grid-cols-5 gap-2 px-4">
-        <TodosCard/>
+      <div className="grid sm:grid-cols-2  sm:gap-2 px-4">
+        {load == "pending" ? "Loading..." : <TodosCard />}
       </div>
     </div>
   );
